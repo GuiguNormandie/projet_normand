@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Traduction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'qcm_normand/css/style.css' %}">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Traduction</h1>
+        <div class="quiz-item">
+            <div class="question">{{ question }}</div>
+            <form class="options">
+                {% for option in options %}
+                    <label class="option">
+                        <input type="radio" name="question1" value="{{ option.mot }}" data-valid="{{ option.validite }}">
+                        {{ option.mot }}
+                    </label>
+                {% endfor %}
+            </form>
+        </div>
+        <button class="submit-button">Valider</button>
+    </div>
+
+    <script src="{% static 'qcm_normand/js/script.js' %}"></script>
+</body>
+</html>
+
+
